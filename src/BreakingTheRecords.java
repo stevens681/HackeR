@@ -11,7 +11,6 @@ public class BreakingTheRecords {
      */
 
     public static List<Integer> breakingRecords(List<Integer> scores) {
-        System.out.println(scores);
 
         List<Integer> result = new ArrayList<>();
         result.add(0);
@@ -30,10 +29,7 @@ public class BreakingTheRecords {
                 result.set(1, result.get(1)+1);
 
             }
-
-
         }
-
         return result;
 
     }
@@ -43,10 +39,10 @@ public class BreakingTheRecords {
         List<Integer> arr = new ArrayList<>();
 
         Random n=new Random();
-        for(int i=0; i<10; i++){
+        for(int i=0; i<10000; i++){
             arr.add(n.nextInt(100));
         }
-        //System.out.print(arr);
+        System.out.println(arr);
         System.out.println(breakingRecords(arr));
 
 
