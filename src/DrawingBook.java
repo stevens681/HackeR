@@ -53,5 +53,7 @@ public class DrawingBook {
         final long endTime = System.currentTimeMillis();
         System.out.println(t);
         System.out.println("Total execution time: " + (endTime - startTime));
+        System.out.println(Math.abs(-30));
+        System.out.println(Math.abs(30));
     }
 }
