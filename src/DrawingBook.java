@@ -44,9 +44,16 @@ public class DrawingBook {
 
 
     public static void main(String[] args) {
-        System.out.println(DrawingBook.pageCount(5,9));
 
-        System.out.println(DrawingBook.pageCount(1990,4000));
+       // System.out.println(DrawingBook.pageCount(5,9));
 
+        //System.out.println(DrawingBook.pageCount(1990,4000));
+        final long startTime = System.currentTimeMillis();
+        int t=DrawingBook.pageCount(1990000,40000000);
+        final long endTime = System.currentTimeMillis();
+        System.out.println(t);
+        System.out.println("Total execution time: " + (endTime - startTime));
+        System.out.println(Math.abs(-30));
+        System.out.println(Math.abs(30));
     }
 }
