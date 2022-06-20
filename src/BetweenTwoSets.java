@@ -20,66 +20,74 @@ public class BetweenTwoSets {
     public static int getTotalX(List<Integer> a, List<Integer> b) {
         // Write your code here
         int res = 0;
-        HashSet<Integer> listA = new HashSet<>(a);
-        HashSet<Integer> listB = new HashSet<>(b);
 
-        // if(Collections.min(a)<=1&&Collections.max(b)>=10)
-        //     return res;
-        // if(Collections.max(a)==Collections.min(b))
-        //     return res;
-        for(int i=Collections.max(listA); i<=Collections.min(listB); i++) {
-            boolean flagA=false, flagB=false;
+       // System.out.println(LcmOfArray(a, 0));
 
-            for (Integer numB : listB) {
-                if (numB % i == 0) {
-                    flagB = true;
-
-                }
-
+//        System.out.println(gcd(LcmOfArray(b, 0), ));
+        //for(int i =1; )
+        int low=Collections.min(b);
+        //System.out.println(low);
+        for(int i=1; i<b.size(); i++){
+//
+            if(gcd(b.get(i-1) , b.get(i))<low){
+                low = gcd(b.get(i), b.get(i - 1));
             }
-            for (Integer numA : a) {
-                if (numA % i == 0) {
-                    flagA=true;
-
-                }
+        }
+        int h=LcmOfArray(a, 0);
+        System.out.println(low+" " +h);
+        for(int i=h; i<=low; i++){
+            if(low % i == 0 && i%2==0){
+                System.out.println(i);
+                res++;
             }
-            if(flagA&&flagB)res++;
         }
 
         return res;
 
     }
+    // Recursive function to return gcd of a and b
+    static int gcd(int a, int b)
+    {
+        return b == 0? a:gcd(b, a % b);
+    }
+
+    // recursive implementation
+    static int LcmOfArray(List<Integer> arr, int idx)
+    {
+
+        // lcm(a,b) = (a*b/gcd(a,b))
+        if (idx == arr.size() - 1){
+            return arr.get(idx);
+        }
+        int a = arr.get(idx);
+        int b = LcmOfArray(arr, idx+1);
+        return (a*b/gcd(a,b));
+    }
 
 
     public static void main(String[] args) {
-
+//        2
+//        20 30 12
         List<Integer> a = new ArrayList<>();
-        a.add(2);
-//        a.add(4);
+        a.add(3);
+        a.add(4);
 
         List<Integer> b = new ArrayList<>();
-        b.add(20);
-        b.add(30);
-        b.add(12);
+        b.add(48);
+        b.add(24);
+//        b.add(12);
 
         System.out.println(getTotalX(a,b));
 
 
-//    2 4
-//16 32 96
-
 
     }
 
-//        int n=48;
-//        for(int i=1; i <= n; i++) {
-//            if(n % i == 0) {
-//                if(i%1==0){
-//                    System.out.print(i + "Division");
-//                }
-//                System.out.print(i + "\t");
-//            }
-//            System.out.println(i + "\t");
-//        }
-//    }
+
 }
+
+/**
+ 1. Find LCM of the first array a. 2.Find GCD / HCF of the second array b.
+ 3.Find all the multiples of LCM up to GCD, which divides the GCD evenly.
+
+ */

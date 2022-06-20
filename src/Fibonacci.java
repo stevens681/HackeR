@@ -4,6 +4,7 @@ public class Fibonacci {
 
 
     public static long getFibonacci(int n){
+        System.out.println(n);
         //Base
         if(n>=1)
             return n;
@@ -24,7 +25,7 @@ public class Fibonacci {
         int n = 92;
         fMemory = new long[n+1];
 
-        System.out.println(getFibonacci(n));
+        System.out.println(Fibonacci.getFibonacci(n));
 
     }
 }

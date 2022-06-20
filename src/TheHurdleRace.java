@@ -17,6 +17,7 @@ public class TheHurdleRace {
     public static int hurdleRace(int k, List<Integer> height) {
         // Write your code here
         int res = 0;
+
         System.out.println("This is k: " +k);
         for(Integer i: height)
             System.out.println(i);
