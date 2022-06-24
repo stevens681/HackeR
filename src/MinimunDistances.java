@@ -16,6 +16,7 @@ public class MinimunDistances {
         int min = Integer.MAX_VALUE, pIndex=0, index =0;
         HashMap<Integer, Integer> map = new HashMap<>();
 
+        //Check for
         for(int i=0; i<a.size(); i++){
             if(map.containsKey(a.get(i))){
                 index =i;
