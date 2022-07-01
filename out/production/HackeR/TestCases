@@ -1,0 +1,24 @@
+        List<Integer> arr = new ArrayList<>();
+        Random n=new Random();
+        for(int i=0; i<5; i++){
+            arr.add(n.nextInt(5));
+        }
+
+         List<Integer> arr = new ArrayList<>();
+                arr.add(-1);
+                arr.add(-3);
+                arr.add(4);
+                arr.add(2);
+
+
+        String list = "1 3 1 3 1 4 1 3 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5";
+        String word = "abc";
+        List<Integer> arr = new ArrayList<>();
+
+        char[] a= list.toCharArray();
+        for(Character i: a){
+            if(i.equals(' ')) continue;
+
+            arr.add(Character.getNumericValue(i));
+
+        }
