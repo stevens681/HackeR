@@ -12,20 +12,31 @@ public class BeautifulDaysAtTheMovies {
     public static int beautifulDays(int i, int j, int k) {
         // Write your code here
         int res=0, range=j-i;
+
+        //Walks the range.
         for(int count=0; count<=range; count++){
 
+            //Finds if is reversed and even divisible.
             if(((i+count)-reverseNum(i+count)) % k ==0)
-                res++;
+                res++;  //Counts the result.
         }
 
         return res;
     }
 
+    /**
+     * This will get the i-reverse(i) and make sure
+     * is evenly divisible.
+     *
+     * Returns reversed.
+     * */
     public static int reverseNum(int n){
-        int reversed=0;
+        int reversed=0; //To hold the result
+
+        //Divides until 0
         while(n != 0) {
 
-            int digit = n % 10;
+            int digit = n % 10; //N multiple of 10
             reversed = reversed * 10 + digit;
 
             n /= 10;

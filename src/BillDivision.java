@@ -13,12 +13,17 @@ public class BillDivision {
      */
     public static void bonAppetit(List<Integer> bill, int k, int b) {
         // Write your code here
-        int sum=0;
+        int sum=0;  //Hold the result
+
+        //Walks the bill
         for(int i=0; i<bill.size(); i++){
-            if(k==i)continue;
-            sum+=bill.get(i);
+            if(k==i)continue;   //If the bill is the same skip this interaction.
+            sum+=bill.get(i);   //Sums the bill.
         }
-        double split = sum/2;
+
+        double split = sum/2;   //Split the bill in half
+
+        //Rounds it up and prints the bill message.
         if(b==Math.round(split))
             System.out.println("Bon Appetit");
         else

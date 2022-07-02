@@ -11,22 +11,25 @@ public class BreakingTheRecords {
      */
 
     public static List<Integer> breakingRecords(List<Integer> scores) {
-
+        //This is the list that it holds the result.
         List<Integer> result = new ArrayList<>();
+        result.add(0);  //Initializes the list.
         result.add(0);
-        result.add(0);
-        int min=scores.get(0), max=scores.get(0);
+        int minimalScores=scores.get(0), maximumScores=scores.get(0);   //Holds the first score in the list
+        //Walks the list starting from index 1
         for(int i=1; i<scores.size(); i++){
 
-            if(scores.get(i)>max){
-                max=scores.get(i);
-                result.set(0, result.get(0)+1);
+            //Checks for maximum scores
+            if(scores.get(i)>maximumScores){
+                maximumScores=scores.get(i);
+                result.set(0, result.get(0)+1); //Modifies the list result
 
             }
 
-            if(scores.get(i)<min){
-                min=scores.get(i);
-                result.set(1, result.get(1)+1);
+            //Checks for minimum scores
+            if(scores.get(i)<minimalScores){
+                minimalScores=scores.get(i);
+                result.set(1, result.get(1)+1); //Modifies the list result
 
             }
         }
