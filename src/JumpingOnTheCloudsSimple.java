@@ -22,7 +22,6 @@ public class JumpingOnTheCloudsSimple {
         }
 
         return res;
-
     }
     public static void main(String[] args) {
 
