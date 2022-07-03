@@ -15,25 +15,34 @@ public class ClimbingTheLeaderboard {
 
     public static List<Integer> climbingLeaderboard(List<Integer> ranked, List<Integer> player) {
         // Write your code here
-        List<Integer> res = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();  //Holds the result as list.
+
+        //To assign the players and the ranks.
         NavigableMap<Integer, Integer> org = new TreeMap<>();
+
+        //Counter starting in 1
         int count = 1;
+        //Walks the ranks.
         for(Integer i: ranked){
+
+            //If it doesn't contain the key.
             if(!org.containsKey(i)){
-                org.put(i, count);
-                count++;
+                org.put(i, count);  //Assigns to the Navigation map.
+                count++;    //Add  to the counter.
             }
         }
+
+        //if is not 0
         if(!org.containsKey(0))
             org.put(0, count);
 
+        //Walks the players
         for(Integer i: player){
 
+            //Adds the players and position.
             res.add(org.get(org.floorKey(i)));
         }
-
         return res;
-
     }
 
 
