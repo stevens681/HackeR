@@ -28,6 +28,7 @@ public class TheHurdleRace {
 
         return res;
     }
+    //Main`
     public static void main(String[] args) {
 
         List<Integer> arr = new ArrayList<>();
