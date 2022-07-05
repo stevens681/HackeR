@@ -14,16 +14,19 @@ public class CutTheSticks {
     public static List<Integer> cutTheSticks(List<Integer> arr) {
         // Write your code here
 
-        List<Integer> res = new ArrayList<>();
-        while(true){
-            res.add(arr.size());
-            int shortStick= Collections.min(arr);
-            arr.removeAll(Collections.singleton(shortStick));
-            for(int i=0; i<arr.size(); i++){
-                arr.set(i, arr.get(i)-shortStick);
+        List<Integer> res = new ArrayList<>();  //To hold the result.
+
+        //Loops the list
+        do {
+            res.add(arr.size());    //Adds to the list
+            int shortStick = Collections.min(arr);  //Minimum value of list.
+            arr.removeAll(Collections.singleton(shortStick));   //Removed the all the short sticks.
+
+            //Iterate the list once more and modifies the result.
+            for (int i = 0; i < arr.size(); i++) {
+                arr.set(i, arr.get(i) - shortStick);
             }
-            if(arr.size()<1)break;
-        }
+        } while (arr.size() >= 1);
 
         return res;
 
