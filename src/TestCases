@@ -22,3 +22,16 @@
             arr.add(Character.getNumericValue(i));
 
         }
+
+        //Single Array
+
+                String list = "3 3 2 1 3";
+                List<Integer> arr = new ArrayList<>();
+
+                char[] a= list.toCharArray();
+                for(Character i: a){
+                    if(i.equals(' ')) continue;
+
+                    arr.add(Character.getNumericValue(i));
+
+                }

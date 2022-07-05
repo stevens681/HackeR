@@ -10,17 +10,19 @@ public class CountingValleys {
 
     public static int countingValleys(int steps, String path) {
         // Write your code here
-        int result=0, v=0;
+        int result=0, v=0;  //Holds the results and the valleys.
+
+        //Divides the path into characters.
         char[] level = path.toCharArray();
 
+        //Iterates the steps.
         for(int i=0; i<steps; i++){
-            if(level[i]=='U')
+            if(level[i]=='U')   //If is U
                 v++;
             else
                 v--;
-            if(v==0&&level[i]=='U')result++;
+            if(v==0&&level[i]=='U')result++;    //Counts the result
         }
-
 
         return result;
 

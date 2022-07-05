@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MinimunDistances {
+public class MinimumDistances {
     /*
      * Complete the 'minimumDistances' function below.
      *
@@ -32,8 +32,6 @@ public class MinimunDistances {
     }
 
     public static void main(String[] args) {
-
-    //7 1 3 4 1 7
 
         String list = "7 1 3 4 1 7";
         List<Integer> arr = new ArrayList<>();
