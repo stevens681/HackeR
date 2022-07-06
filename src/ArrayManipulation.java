@@ -24,7 +24,7 @@ public class ArrayManipulation {
             arr[a-1] += k;
             arr[b] -= k;
         }
-//
+
         for(int i = 0; i<n; i++){
             sum += arr[i];
             res = Math.max(res, sum);
