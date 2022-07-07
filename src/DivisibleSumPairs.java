@@ -15,36 +15,31 @@ public class DivisibleSumPairs {
 
     public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
         // Write your code here
-        int result=0;
+        int res=0;
         for(int i=0; i<n; i++){
             int hold=0;
             for(int j=i+1; j<n; j++){
                 hold=ar.get(i)+ar.get(j);
                 if(hold%k==0){
-                    result++;                }
+                    res++;
+                }
             }
-
         }
-        return result;
+        return res;
     }
     public static void main(String[] args) {
+        String list = "1 3 2 6 1 2";
         List<Integer> arr = new ArrayList<>();
-//        for(int i=0; i<6; i++){
-//            arr.add(i+1);
-//        }
-        //1 3 2 6 1 2
 
-        arr.add(1);
-        arr.add(3);
-        arr.add(2);
-        arr.add(6);
-        arr.add(1);
-        arr.add(2);
+        char[] a= list.toCharArray();
+        for(Character i: a){
+            if(i.equals(' ')) continue;
+            arr.add(Character.getNumericValue(i));
+        }
 
-        //DivisibleSumPairs.divisibleSumPairs(6,3,arr);
         System.out.println(DivisibleSumPairs.divisibleSumPairs(arr.size(), 3,arr));
 
-        List<Integer> ar = Arrays.asList(1, 2,3,4,5,6);
+        List<Integer> ar = Arrays.asList(1,2,3,4,5,6);
         System.out.println(DivisibleSumPairs.divisibleSumPairs(arr.size(), 5,ar));
 
     }

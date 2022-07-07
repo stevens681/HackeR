@@ -15,7 +15,7 @@ public class ArrayManipulation {
 
     public static long arrayManipulation(int n, List<List<Integer>> queries) {
         // Write your code here
-        long res = 0, sum = 0;
+        long res = 0, sum = 0;  //
         long[] arr = new long[n+1];
         for(List<Integer> i: queries) {
             int a = i.get(0);
