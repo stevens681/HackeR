@@ -10,20 +10,26 @@ public class NewYearChaos {
 
     public static void minimumBribes(List<Integer> q) {
         // Write your code here
-        int res=0;
-        String bribe ="";
+        int res=0;  //Numeric value.
+        String bribe ="";   //String value.
+        //Reverse loop the queries.
         for(int i = q.size()-1; i>=0; i--){
 
+            //Gets value and compares with 2
             if(q.get(i)-(i+1) > 2){
+                //Too chaotic and breaks.
                 bribe ="Too chaotic";
                 break;
             }
+            //Loops from 0 and up.
             for(int j = Math.max(0, q.get(i)-2); j<i; j++){
+                //Counts if is more than 0
                 if(q.get(j)>q.get(i)){
                     res++;
                 }
 
             }
+            //sets the bribe.
             bribe = Integer.toString(res);
 
         }
