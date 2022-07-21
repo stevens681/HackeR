@@ -25,7 +25,6 @@ public class TwoDArrayDS {
                 res = Math.max(res, sum);
             }
         }
-
         return res;
     }
 

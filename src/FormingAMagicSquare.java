@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class FormingAMagicSquare {
 
     public static int formingMagicSquare(List<List<Integer>> s){
         int res = 0;
-        int[][] matrix={{4,9,2,3,5,7,8,1,6},
+        Integer[][] matrix1={{4,9,2,3,5,7,8,1,6},
                 {2,7,6,9,5,1,4,3,8},
                 {6,1,8,7,5,3,2,9,4},
                 {8,3,4,1,5,9,6,7,2},
@@ -13,7 +14,7 @@ public class FormingAMagicSquare {
                 {6,7,2,1,5,9,8,3,4},
                 {8,1,6,3,5,7,4,9,2},
                 {4,3,8,9,5,1,2,7,6}};
-        for(int i = 0; i<matrix.length; i++){
+        for(int i = 0; i<matrix1.length; i++){
 
             for(int out = 0; out<s.size(); out++){
                 for(int in = 0; in<s.get(out).size(); in++) {
@@ -21,9 +22,12 @@ public class FormingAMagicSquare {
                 }
             }
 
-            System.out.println(matrix[i][0]);
+            System.out.println(matrix1[i][0]);
         }
+        HashSet<Integer[][]> matrix = new HashSet<>();
+        matrix.add(matrix1);
 
+        System.out.println(matrix);
 
 //        for(int i = 0; i < arr.length; i++) {
 //            int problems = arr[i];
