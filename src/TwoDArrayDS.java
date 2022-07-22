@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class TwoDArrayDS {
@@ -31,6 +32,37 @@ public class TwoDArrayDS {
 
 
     public static void main(String[] args) {
+        String list = """
+                1 1 1 0 0 0
+                0 1 0 0 0 0
+                1 1 1 0 0 0
+                0 0 2 4 4 0
+                0 0 0 2 0 0
+                0 0 1 2 4 0""";
+//        String list = """
+//                -9 -9 -9  1 1 1
+//                 0 -9  0  4 3 2
+//                -9 -9 -9  1 2 3
+//                 0  0  8  6 6 0
+//                 0  0  0 -2 0 0
+//                 0  0  1  2 4 0""";
+
+        List<List<Integer>> arr = new ArrayList<>();
+
+        String[] split = list.split("\n");
+
+        for(int i = 0; i<list.split("\n").length; i++){
+
+            String[] space = split[i].split("\\s");
+            List<Integer> hold = new ArrayList<>();
+            for (String s : space) {
+                hold.add(Integer.parseInt(s));
+            }
+            if(!hold.isEmpty())
+                arr.add(hold);
+
+        }
+        System.out.println(hourglassSum(arr));
 
     }
 }
